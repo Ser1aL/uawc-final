@@ -5,4 +5,4 @@ Mp3 Files - application, that allows easily modify mp3 files
 ```
 git clone https://github.com/Ser1aL/uawc-semifinal.git
 vagrant up
-``
+```
