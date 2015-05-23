@@ -40,7 +40,7 @@ class Mp3File
         # store new file in project with the link redis link
         prefix = Digest::MD5.hexdigest(Time.now.to_f.to_s).last(4)
         mp3_file_path = File.join(STORE_DIR, prefix + File.basename(@file.path))
-        FileUtils.cp(@file.path, mp3_file_path)
+        FileUtils.cp(@file.path, File.expand_path('.', mp3_file_path))
 
         UAWCFinal.application_redis.set(self.assign_new_id, mp3_file_path)
 
