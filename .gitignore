@@ -1,0 +1,6 @@
+.sass-cache
+.vagrant
+log/*.log
+tmp/puma/state
+tmp/puma/pid
+public/mp3_files/*.mp3
