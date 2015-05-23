@@ -1,6 +1,5 @@
 GEM
   remote: http://rubygems.org/
-  remote: http://gemcutter.org/
   specs:
     autoprefixer-rails (5.1.7.1)
       execjs
@@ -83,7 +82,7 @@ DEPENDENCIES
   puma
   redis
   rmagick
-  ruby-audio!
+  ruby-audio
   ruby-mp3info
   sinatra
   sinatra-contrib

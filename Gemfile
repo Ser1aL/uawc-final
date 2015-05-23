@@ -22,9 +22,7 @@ gem 'ruby-mp3info'
 gem 'rmagick'
 
 # ruby wrapper around libsndfile
-source 'http://gemcutter.org' do
-  gem 'ruby-audio'
-end
+gem 'ruby-audio'
 
 # application runner and faster server
 gem 'puma'
