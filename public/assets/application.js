@@ -25,7 +25,7 @@ $(document).ready(function(){
       .done(function(response){
         button.removeAttr('disabled');
         $('.loader').addClass('hidden');
-        var waveform_path = 'waveforms/' + response.waveform
+        var waveform_path = '/waveforms/' + response.waveform
         $('.download-waveform').attr('href', waveform_path).removeClass('hidden');
         var waveform = $('<img>').attr('src', waveform_path)
         $('.waveform-container').append(waveform);
