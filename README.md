@@ -3,6 +3,6 @@ Mp3 Files - application, that allows easily modify mp3 files
 
 ## Installation
 ```
-git clone https://github.com/Ser1aL/uawc-semifinal.git
+git clone https://github.com/Ser1aL/uawc-final.git
 vagrant up
 ```
