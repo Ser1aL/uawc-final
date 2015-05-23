@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install -y curl git gcc libsndfile1-dev ffmpeg imagemagick libmagickwand-dev
+apt-get install -y curl git gcc libsndfile1-dev ffmpeg imagemagick libmagickwand-dev redis-server
 
 # first try git clone
 cd /opt
