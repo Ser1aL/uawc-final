@@ -15,11 +15,29 @@
       %button.btn.btn-default.btn-danger.pull-right.submit-button Update
     .col-sm-2
 
+.well.info-wrapper
+  %form.form-horizontal.top-margin-2{ action: "/generate_waveform/#{mp3_file.id}", method: 'GET' }
+    .form-group
+      .row
+        .col-sm-12.waveform-container
+    .form-group
+      .row
+        .col-sm-4
+        .col-sm-3
+          %a.btn.btn-default.btn-success.pull-right.download-waveform.hidden{href: ''} Download this waveform
+        .col-sm-1
+          .loader.hidden
+            %img{ src: '/assets/loader.gif' }
+        .col-sm-2
+          %button.btn.btn-default.btn-primary.pull-right.generate-waveform-button Generate waveform for me
+        .col-sm-2
+
+
 %form.form-horizontal.top-margin-2{ action: "/email/#{mp3_file.id}", method: 'POST' }
   .form-group.email
     .col-sm-2
     %label.col-sm-2.right-aligned{ for: 'email' } Email
-    .col-sm-6.template-container
+    .col-sm-6
       .row
         .col-sm-12
           %input.form-control{placeholder: "Email", type: 'email', name: 'email' }

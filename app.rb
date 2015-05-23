@@ -6,7 +6,10 @@ require 'open-uri'
 require 'haml'
 require 'mp3info'
 require 'redis'
+require 'ruby-audio'
+require 'rmagick'
 
+require_relative './lib/waveform_generator'
 require_relative './lib/mp3_file_validations'
 require_relative './lib/mp3_file'
 
@@ -85,10 +88,12 @@ class UAWCFinal < Sinatra::Base #:nodoc:
   end
 
   get '/generate_waveform/:id' do
+    puts "---started generation"
     mp3_file = Mp3File.find(params[:id])
-    waveform_png = mp3_file.generate_waveform
+    waveform_png = mp3_file.generate_waveform_image
 
-
+    content_type :json
+    { waveform: waveform_png }.to_json
   end
 
   # Direct download

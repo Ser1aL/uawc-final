@@ -79,6 +79,10 @@ class Mp3File
     @id = Digest::MD5.hexdigest(Time.now.to_f.to_s).last(8)
   end
 
+  def generate_waveform_image
+    WaveformGenerator.new(@file.path).generate_waveform
+  end
+
   def email_file(recipient) #:nodoc:
     smtp_settings = {
       :address              => "smtp.gmail.com",

@@ -18,6 +18,14 @@ gem 'redis'
 # read / write mp3 tags
 gem 'ruby-mp3info'
 
+# draw waveforms
+gem 'rmagick'
+
+# ruby wrapper around libsndfile
+source 'http://gemcutter.org' do
+  gem 'ruby-audio'
+end
+
 # application runner and faster server
 gem 'puma'
 

@@ -4,3 +4,5 @@ log/*.log
 tmp/puma/state
 tmp/puma/pid
 public/mp3_files/*.mp3
+public/*.txt
+public/*.mp3

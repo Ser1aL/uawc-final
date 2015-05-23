@@ -1,21 +1,6 @@
 $(document).ready(function(){
 
-  // $('.main-tab-panel a').click(function (e) {
-  //   e.preventDefault();
-  //   $(this).tab('show');
-  // });
-
-  // $('.main-tab-panel li a.active').tab('show');
-
   $("#inputFile").fileinput({'showPreview':false});
-
-  // $('.more-button').click(function (event) {
-  //   event.preventDefault();
-  //   var $form_group = $(this).closest('.form-group');
-  //   var $template = $form_group.find('.row.template').clone();
-  //   $template.removeClass('template').addClass('top-margin-1');
-  //   $form_group.find('.template-container').append($template.prop('outerHTML'));
-  // });
 
   $('.delivery-type-group label.radio-inline').click(function(event){
     if ($(this).find('input').val() == 'email') {
@@ -24,6 +9,27 @@ $(document).ready(function(){
     else {
       $('.form-group.email').addClass('hidden');
     }
+  });
+
+  $('.generate-waveform-button').click(function(event){
+    event.preventDefault();
+    var button = $(this)
+    var url = button.closest('form').attr('action');
+    $('.loader').removeClass('hidden');
+    button.attr('disabled', 'disabled');
+
+    $.ajax({
+        url: url,
+        method: 'GET'
+      })
+      .done(function(response){
+        button.removeAttr('disabled');
+        $('.loader').addClass('hidden');
+        var waveform_path = 'waveforms/' + response.waveform
+        $('.download-waveform').attr('href', waveform_path).removeClass('hidden');
+        var waveform = $('<img>').attr('src', waveform_path)
+        $('.waveform-container').append(waveform);
+      });
   });
 
 });
