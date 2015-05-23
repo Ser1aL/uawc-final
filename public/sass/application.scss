@@ -1,0 +1,31 @@
+@import "bootstrap_variables";
+@import "base";
+
+.top-margin-1 {
+  margin-top: 10px;
+}
+
+.top-margin-2 {
+  margin-top: 20px;
+}
+
+.top-margin-4 {
+  margin-top: 40px;
+}
+
+.bot-margin-1 {
+  margin-bottom: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+pre.success {
+  color: green;
+}
+
+.tag-header {
+  font-style: italic;
+  font-weight: bold;
+}

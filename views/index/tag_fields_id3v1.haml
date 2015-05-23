@@ -1,0 +1,12 @@
+.well.info-wrapper
+  .row
+    .col-sm-11
+    .col-sm-1.pull-right.tag-header ID3 v1
+
+  - %w(title artist album year comments).each do |tag_type|
+    .form-group
+      .col-sm-2
+      %label.col-sm-2.right-aligned{ for: "mp3file[v1][#{tag_type}]" }= tag_type.capitalize
+      .col-sm-6
+        %input.form-control{ placeholder: "#{tag_type}", type: 'text', name: "mp3file[v1][#{tag_type}]", value: mp3_file.info.tag1.send(tag_type) }
+      .col-sm-2

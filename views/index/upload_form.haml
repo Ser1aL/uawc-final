@@ -1,0 +1,16 @@
+%form.form-horizontal.top-margin-4{ action: '/upload_file', method: 'POST', enctype: 'multipart/form-data' }
+  .form-group
+    .col-sm-1
+    %label.col-sm-2{ for: 'mp3_file' } Select mp3 file
+    .col-sm-6
+      %input#inputFile.file-loading{ type: 'file', name: 'mp3_file'}
+    .col-sm-3
+
+%form.form-horizontal.top-margin-2{ action: '/upload_by_link', method: 'POST' }
+  .form-group
+    .col-sm-1
+    %label.col-sm-2{ for: 'mp3_file_link' } Paste a link
+    .col-sm-6
+      %input.form-control.pull-left{ type: 'text', name: 'mp3_file_link'}
+      %button.btn.btn-warning.pull-left{ type: 'submit'} Submit a link and Edit contents
+    .col-sm-3

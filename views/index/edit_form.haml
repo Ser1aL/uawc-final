@@ -1,0 +1,35 @@
+%form.form-horizontal.top-margin-2{ action: "/update/#{mp3_file.id}", method: 'POST' }
+  -# ID3v1 tags
+  = haml :'index/tag_fields_id3v1', locals: { mp3_file: mp3_file }
+
+  -# ID3v2 tags
+  = haml :'index/tag_fields_id3v2', locals: { mp3_file: mp3_file }
+
+  .form-group
+    .col-sm-5
+    .col-sm-3
+      .output
+    .col-sm-1
+      %a.btn.btn-default.btn-success.pull-right.submit-button{href: "/download/#{mp3_file.id}"} Download
+    .col-sm-1
+      %button.btn.btn-default.btn-danger.pull-right.submit-button Update
+    .col-sm-2
+
+%form.form-horizontal.top-margin-2{ action: "/email/#{mp3_file.id}", method: 'POST' }
+  .form-group.email
+    .col-sm-2
+    %label.col-sm-2.right-aligned{ for: 'email' } Email
+    .col-sm-6.template-container
+      .row
+        .col-sm-12
+          %input.form-control{placeholder: "Email", type: 'email', name: 'email' }
+    .col-sm-2
+
+  .form-group
+    .col-sm-5
+    .col-sm-3
+      .output
+    .col-sm-1
+    .col-sm-1
+      %button.btn.btn-default.btn-success.pull-right.submit-button Email me the file
+    .col-sm-2

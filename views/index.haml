@@ -1,0 +1,25 @@
+- success_message = nil unless defined?(success_message)
+- error_message = nil unless defined?(error_message)
+- mp3_file = nil unless defined?(mp3_file)
+
+- if success_message && !success_message.empty?
+  .row
+    %pre.success= success_message
+
+- if error_message && !error_message.empty?
+  .row
+    %pre.error= error_message
+
+.row
+  %div{role: 'tabpanel'}
+    %ul.nav.nav-tabs.main-tab-panel{role: 'tablist'}
+      %li{ class: mp3_file ? '' : 'active' }
+        %a{href: '#upload', role: 'tab', 'aria-controls' => 'upload', 'data-toggle' => 'tab'} I want to upload file and edit
+      - if mp3_file
+        %li.active
+          %a{href: '#edit', role: 'tab', 'aria-controls' => 'upload', 'data-toggle' => 'tab'} Edit mp3 file
+
+    .tab-content
+      .tab-pane#upload{role: 'tabpanel', class: mp3_file ? '' : 'active'}= haml :'index/upload_form'
+      - if mp3_file
+        .tab-pane#edit.active{role: 'tabpanel'}= haml :'index/edit_form', locals: { mp3_file: mp3_file }

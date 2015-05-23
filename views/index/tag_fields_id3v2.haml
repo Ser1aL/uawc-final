@@ -1,0 +1,19 @@
+.well.info-wrapper
+  .row
+    .col-sm-11
+    .col-sm-1.pull-right.tag-header ID3 v2
+
+  - Mp3File::V2_TAGNAME_MAPPING.each do |tag_name, tag_human_name|
+    .form-group
+      .col-sm-2
+      %label.col-sm-2.right-aligned{ for: "mp3file[v1][#{tag_name}]" }= tag_human_name.capitalize
+      .col-sm-6
+        %input.form-control{ placeholder: "#{tag_name}", type: 'text', name: "mp3file[v2][#{tag_name}]", value: mp3_file.info.tag2.send(tag_name) }
+      .col-sm-2
+
+  .form-group
+    .col-sm-2
+    %label.col-sm-2.right-aligned{ for: "mp3file[v1][APIC]" } Picture
+    .col-sm-6
+
+    .col-sm-2
